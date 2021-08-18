@@ -1,0 +1,27 @@
+{% extends 'Index.html' %}
+{% load static %}
+{% block Begin %}
+    <title>{{ book.Title }}</title>
+    <link rel = "stylesheet" href = "{% static 'base.css' %}">
+    <link rel = "stylesheet" href = "{% static 'book_details.css' %}">
+{% endblock %}
+{% block Information %}
+     <main>
+         <article>
+             <img src = "" alt = "">
+
+             <section id = "location">
+                 <h2>Book Author</h2>
+                 <address>This book was done by: <span> {{ book.Author_Name }} </span> <br>
+				 Its ISBN code is: <span> {{ book.ISBN }}</span></address>
+             </section>
+             <section id = "details">
+                 <h2>What is the book about?</h2>
+                 <p>{{ book.Description }}</p> 
+                <footer>
+                    <p><a href = "">Contact</a> the library for details.</p>
+                </footer>
+             </section>
+         </article>
+     </main>
+{% endblock %}

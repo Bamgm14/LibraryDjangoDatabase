@@ -1,0 +1,29 @@
+{% extends 'Index.html' %}
+{% load static %}
+{% block Begin %}
+    <title>Document</title>
+    <link rel = "stylesheet" href = "{% static 'base.css' %}">
+{% endblock %}
+{% block Information %}
+    <center><h1> List of Books </h1></center>
+    <form method = "POST">   
+        <center><input id="id_username" type="text" placeholder=" Search books..." name="search"></center>
+        <center><button type="submit" class = "btn">Submit</button></center>
+    </form>
+    <br>
+
+    <section id = "fonty" style = "padding-left: 500px;">
+        
+        {% for book in Bookslist %}
+			<div style="border: 10px solid black; box-sizing: border-box; width: 50%; font-family:'Times New Roman', Times, serif">
+			<br>
+			<center><h1 id="book-title" style="padding-left: 10px; display:inline"> {{ book.Title }} </h1>  ( <i id="book-isbn" style=" margin-right: auto">ISBN: {{ book.ISBN }}</i> )</center>
+			<center><h3 id="book-name" style="padding-left: 20px"> Author: {{ book.Author_Name }} </h3></center>
+			<!--<center><h3 id="book-description" style="padding-left: 20px"> About this book: {{ book.description }} </h3></center>-->
+			<center><h3 id="book-description" style="padding-left: 20px"> Books in Stock: {{ book.stock }}</h3></center>
+			<center><h3><a href = "{{ book.Slug }}" class = 'btn'>Details</a></h3></center>
+			</div><br>
+        {% endfor %}
+        
+    </section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'Index.html' %}
+{% load static %}
+{% block Begin %}
+  <link rel = "stylesheet" href = "{% static 'base.css' %}">
+  <title>Library Access</title>
+{% endblock %}
+{% block Information %}
+  <center><h1 style="font-size: 150px;">LIBRARY</h1></center>
+
+    <section id = "bottom">
+      <center>
+	  <a type="button" class = "btn" href = "books/">Explore our catalogue</a>
+	  </button>
+	  </center>
+	</section>
+{% endblock %}
