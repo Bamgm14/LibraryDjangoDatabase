@@ -5,13 +5,14 @@
     <link rel = "stylesheet" href = "{% static 'base.css' %}">
 {% endblock %}
 {% block Information %}
+	<section id = "Search" class = "u-clearfix u-sheet u-sheet-1">
     <center><h1> List of Books </h1></center>
     <form>   
         <center><input type="text" placeholder=" Search books..." name="search"></center>
         <center><button type="submit" class = "btn">Submit</button></center>
     </form>
     <br>
-
+	</section>
     <section id = "fonty" style = "padding-left: 500px;">
         
         {% for book in Bookslist %}

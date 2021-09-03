@@ -1,3 +1,4 @@
+
 .u-section-1 {
     background-image: linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("images/books.jfif");
     background-position: 50% 50%;
@@ -39,6 +40,13 @@
     margin: 0 auto 0 73px;
     padding: 0;
   }
+  .u-section-1 .u-image-1 {
+  width: 361px;
+  height: 361px;
+  background-image: url("/static/1519889606730.png");
+  background-position: 50% 50%;
+  margin: 100px auto 0;
+}
   
   @media (max-width: 1199px) {
     .u-section-1 {

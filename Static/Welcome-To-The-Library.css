@@ -3,6 +3,35 @@
   background-position: 50% 50%;
 }
 
+.u-section-1 .image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+.u-section-1 img.rounded {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+}
+
+.u-section-1 .u-image-1 {
+  width: 361px;
+  height: 361px;
+  background-image: url("/static/1519889606730.png");
+  background-position: 50% 50%;
+  margin: 100px auto 0;
+}
 .u-section-1 .u-sheet-1 {
   min-height: 800px;
 }
