@@ -5,7 +5,7 @@
 	<link rel="shortcut icon" type="image/png" href="{% static '1519889606730.png' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Welcome To Labyrinth">
+    <meta name="keywords" content="Easy to use">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
@@ -43,11 +43,13 @@
           <div class="u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1">
 				<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/" style="padding: 10px 20px;">Home</a></li>
-				<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/books" style="padding: 10px 20px;">Books</a></li>
+				<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href = "/#About" style="padding: 10px 20px;">About</a></li>
+				<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/contact" style="padding: 10px 20px;">Contact</a></li>
+				<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/books" style="padding: 10px 20px;">Find Books</a></li>
 				{% if user.is_authenticated %}
-					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/Account" style="padding: 10px 20px;">Account</a></li>
+					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/account" style="padding: 10px 20px;">Account</a></li>
 				{% else %}
-					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/Login" style="padding: 10px 20px;">Login</a></li>
+					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/login" style="padding: 10px 20px;">Login</a></li>
 				{% endif %}
 			</ul>
           </div>
@@ -57,11 +59,13 @@
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
 					<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/">Home</a></li>
-					<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/books">About</a></li>
+					<li class="u-nav-item"><a class="u-button-style u-nav-link" href = "/#About">About</a></li>
+					<li class="u-nav-item"><a class="u-button-style u-nav-link" href = "/contact">Contact</a></li>
+					<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/books">Find Books</a></li>
 					{% if user.is_authenticated %}
-						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Account">Account</a></li>
+						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/account">Account</a></li>
 					{% else %}
-						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/Login">Login</a></li>
+						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/login">Login</a></li>
 					{% endif %}
 				</ul>
               </div>

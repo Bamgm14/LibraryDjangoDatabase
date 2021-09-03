@@ -2,11 +2,6 @@ from django.db import models
 from django.db.models.fields import CharField
 from django.core.validators import RegexValidator
 
-
-    
-    
-
-
 class bookslist(models.Model):
     Title = models.CharField(max_length=200)
     Slug = models.SlugField(unique=True)
@@ -18,11 +13,8 @@ class bookslist(models.Model):
 
     def __str__(self):
         return f'{self.Title}-{self.Slug}' 
-# Create your models here.
 
-
-
-class readers(models.Model):
+class reader(models.Model):
     account_id = models.CharField(max_length=10, primary_key=True)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
@@ -34,7 +26,7 @@ class readers(models.Model):
 
 class issued_list(models.Model):
     ISBN = models.ForeignKey(bookslist, on_delete = models.RESTRICT)
-    account_id = models.ForeignKey(readers, on_delete = models.CASCADE)
+    account_id = models.ForeignKey(reader, on_delete = models.CASCADE)
     issued_time = models.DateTimeField()
 
 

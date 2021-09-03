@@ -31,3 +31,5 @@ def book_details(request,book_Slug):
             'book_found': False
         })
     
+def contact(request):
+    return render(request, 'Contact.html')

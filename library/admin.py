@@ -1,9 +1,8 @@
 from django.contrib import admin
 
 
-from .models import bookslist
-from .models import issued_list
-from .models import readers
+from .models import *
+
 
 @admin.action(description='Mark selected stories as issued')
 def search(modeladmin, request, queryset):
@@ -22,7 +21,7 @@ class issued_list_admin(admin.ModelAdmin):
     ordering = ['issued_time']
     search_fields = ['ISBN', 'account_id', 'issued_time']
     actions = [search]
-class readers_admin(admin.ModelAdmin):
+class reader_admin(admin.ModelAdmin):
     list_display = ( 'account_id', 'first_name', 'last_name')
     ordering = ['account_id']
     search_fields = ['account_id']
@@ -32,4 +31,4 @@ class readers_admin(admin.ModelAdmin):
 
 admin.site.register(bookslist, bookslist_admin) 
 admin.site.register(issued_list, issued_list_admin) 
-admin.site.register(readers, readers_admin) 
+admin.site.register(reader, reader_admin) 
