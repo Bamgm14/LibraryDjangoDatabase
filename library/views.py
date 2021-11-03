@@ -3,7 +3,7 @@ from .models import bookslist
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
-from .forms import NewUserForm
+from .forms import *
 from django.contrib.auth.models import User
 
 try:
@@ -12,6 +12,22 @@ except:
     import warnings
     email = "[!]WARNING[!]"
     warnings.warn("No Email For SuperUser", Warning)
+
+def issued_book(request):
+    pass
+
+def add_book(request):
+    message=''
+    if request.method == "POST":
+        form = NewBook(request.POST,request.FILES)
+        if form.is_valid():
+            form.save(commit=True)
+            message = "Book has been added."
+        else:
+            message = "An Error Has Occured. Possible invalid form entire."
+    else:
+        form = NewBook()
+    return render(request,'add_book.html',{'msg':message,'form':form})
 
 def account(request):
     #print(dir(request.user))
