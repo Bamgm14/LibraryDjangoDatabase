@@ -1,0 +1,18 @@
+{% extends 'Index.html' %}
+{% load static %}
+{% block Begin %}
+<title>Contact</title>
+<link rel="stylesheet" href="{% static 'Contact.css' %}" media="screen">
+{% endblock %}
+{% block Information %}
+<section>
+<center>
+Username: {{ user.username }}
+<br>
+Name: {{ user.first_name }} {{ user.last_name }}
+<br>
+<a href="/logout">Logout</a>
+</center>
+</section>
+<!-- Put Embed of Google Forms, this will decrease workload for us -->
+{% endblock %}

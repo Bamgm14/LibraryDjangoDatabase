@@ -1,9 +1,22 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponseRedirect
 from .models import bookslist
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from .forms import NewUserForm
+from django.contrib.auth.models import User
+
+try:
+    email = User.objects.filter(is_superuser=True).values_list('email')[0][0]
+except:
+    import warnings
+    email = "[!]WARNING[!]"
+    warnings.warn("No Email For SuperUser", Warning)
+
+def account(request):
+    #print(dir(request.user))
+    return render(request,'Account.html',{"user":request.user})
+
 def library_details(request):
     bookslists = bookslist.objects.all()
 
@@ -22,11 +35,14 @@ def homepage(request):
     })
     
 def book_details(request,book_Slug):
+    print(request.user)
     try:
         selected_book = bookslist.objects.get(Slug=book_Slug)
         return render(request, 'book_details.html', {
             'book_found': True,
             'book': selected_book,
+            'email': email,
+            'user': request.user
         })
 
 
@@ -37,6 +53,10 @@ def book_details(request,book_Slug):
     
 def contact(request):
     return render(request, 'Contact.html')
+
+def _logout(request):
+    logout(request)
+    return redirect('/')
 
 def register(request):
     if request.method == "POST":
@@ -49,7 +69,7 @@ def register(request):
             print(f'Register')
             return redirect("/account")
         else:
-            print("Hello World")
+            return redirect("/register")
     else:
         form = NewUserForm()
     return render(request,'Register.html',{'form': form})

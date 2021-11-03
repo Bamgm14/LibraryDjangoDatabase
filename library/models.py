@@ -1,16 +1,25 @@
 from django.db import models
 from django.db.models.fields import CharField
 from django.core.validators import RegexValidator
+from django.utils.text import slugify
+from pathlib import Path
+import os
+
+#print(settings.BASE_URL)
 
 class bookslist(models.Model):
     Title = models.CharField(max_length=200)
-    Slug = models.SlugField(unique=True)
+    Slug = models.SlugField(unique=True,blank=True)
     ISBN = models.CharField(max_length=200, primary_key=True)
     Author_Name = models.CharField(max_length=200)
     description = models.TextField() 
     stock = models.IntegerField()
-    image = models.ImageField(upload_to='images')
-
+    image = models.ImageField(upload_to='images',default = 'images/not-found-image-15383864787lu.jpg',blank = True)
+    def save(self, *args, **kwargs):
+        if not self.Slug:
+            self.Slug = slugify(self.Title)
+        super(bookslist, self).save(*args, **kwargs)
+    
     def __str__(self):
         return f'{self.Title}-{self.Slug}' 
 

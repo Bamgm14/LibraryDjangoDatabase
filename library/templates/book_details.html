@@ -8,20 +8,22 @@
 {% block Information %}
      <main>
          <article>
-             <img src = "" alt = "">
+			<center>
+             <img src = "{{ book.image.url }}" alt = "ERROR" width="300" height="300>
 
              <section id = "location">
                  <h2>Book Author</h2>
-                 <address>This book was done by: <span> {{ book.Author_Name }} </span> <br>
-				 Its ISBN code is: <span> {{ book.ISBN }}</span></address>
+                 <address>This book was done written by: <span> {{ book.Author_Name }} </span> <br>
+				 ISBN Code: <span> {{ book.ISBN }}</span></address>
              </section>
              <section id = "details">
                  <h2>What is the book about?</h2>
-                 <p>{{ book.Description }}</p> 
+                 <p>{{ book.description }}</p> 
                 <footer>
-                    <p><a href = "">Contact</a> the library for details.</p>
+                    <p><a href="mailto:{{ email }}?Subject=Requesting Book {{ book.ISBN }} for user {{ user.username }}">Contact</a> the library for details.</p>
                 </footer>
              </section>
+			</center>
          </article>
      </main>
 {% endblock %}
