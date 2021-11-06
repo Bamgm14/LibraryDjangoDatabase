@@ -11,23 +11,33 @@
           <form action="" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
 			{% csrf_token %}
             <div class="u-form-group u-form-name">
-              <label for="name-8fdd" class="u-label">Username</label>
-			  <input placeholder="" type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"
+              <label for="name-8fdd" class="u-label">Username*</label>
+			  <input placeholder="Enter Your Username" type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"
+			  class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+            </div>
+			<div class="u-form-group u-form-name">
+              <label for="name-8fdd" class="u-label">First Name</label>
+			  <input placeholder="Enter Your First Name" type="text" name="first_name" maxlength="150" id="id_first_name"
+			  class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+            </div>
+			<div class="u-form-group u-form-name">
+              <label for="name-8fdd" class="u-label">Last Name</label>
+			  <input placeholder="Enter Your Last Name" type="text" name="last_name" maxlength="150" id="id_last_name"
 			  class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-email u-form-group">
-              <label for="email-8fdd" class="u-label">Email</label>
-			  <input type="email" name="email" required="" id="id_email"
+              <label for="email-8fdd" class="u-label">Email*</label>
+			  <input placeholder="Enter Your Email" type="email" name="email" required="" id="id_email"
 			  class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-form-group u-form-password">
-              <label for="message-8fdd" class="u-label">Password</label>
-			  <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1"
+              <label for="message-8fdd" class="u-label">Password*</label>
+			  <input placeholder="Enter Your Password" type="password" name="password1" autocomplete="new-password" required="" id="id_password1"
 			  class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
 			<div class="u-form-group u-form-password">
-              <label for="message-8fdd" class="u-label">Confirm Password</label>
-			  <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2"
+              <label for="message-8fdd" class="u-label">Confirm Password*</label>
+			  <input placeholder="Confirm Your Password" type="password" name="password2" autocomplete="new-password" required="" id="id_password2"
 			  class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
             </div>
             <div class="u-align-left u-form-group u-form-submit">

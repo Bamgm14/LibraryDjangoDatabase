@@ -13,8 +13,12 @@ except:
     email = "[!]WARNING[!]"
     warnings.warn("No Email For SuperUser", Warning)
 
+def register_reader(request):
+    pass
+
 def issued_book(request):
     pass
+    #return render(request)
 
 def add_book(request):
     message=''
@@ -68,7 +72,7 @@ def book_details(request,book_Slug):
         })
     
 def contact(request):
-    return render(request, 'Contact.html')
+    return render(request, 'Contact.html',{"email" : email})
 
 def _logout(request):
     logout(request)
@@ -76,15 +80,24 @@ def _logout(request):
 
 def register(request):
     if request.method == "POST":
+        #print(request.POST)
         form = NewUserForm(request.POST)
-        print(f'Register',form.is_valid())
+        #print(dir(form))
+        print(form.fields['username']())
+        #print(f'Register',form.is_valid())
         if form.is_valid():
             user = form.save()
+            reader = NewReader(request.POST)
+            if reader.is_valid():
+                reader.save()
+            else:
+                messages.error(request, 'Unable to save as Reader')
             login(request, user)
             messages.success(request, "Registration Successful")
             print(f'Register')
             return redirect("/account")
         else:
+            messages.error(request, 'Something went wrong, please redo')
             return redirect("/register")
     else:
         form = NewUserForm()
