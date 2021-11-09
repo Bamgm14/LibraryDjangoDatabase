@@ -9,6 +9,7 @@ import uuid
 #print(settings.BASE_URL)
 
 class bookslist(models.Model):
+    
     Title = models.CharField(max_length=200)
     Slug = models.SlugField(unique=True,blank=True)
     ISBN = models.CharField(max_length=200, primary_key=True)
@@ -26,6 +27,7 @@ class bookslist(models.Model):
         return f'{self.Title}-{self.Slug}' 
 
 class reader(models.Model):
+    
     account_id = models.UUIDField(blank=True, default=uuid.uuid4, unique=True, editable=False)
     username = models.CharField(max_length=200)
     first_name = models.CharField(max_length=200,blank=True)
@@ -38,6 +40,7 @@ class reader(models.Model):
         return f'{self.first_name}-{self.last_name}' 
 
 class issued_list(models.Model):
+    
     ISBN = models.ForeignKey(bookslist, on_delete = models.RESTRICT)
     account_id = models.ForeignKey(reader, on_delete = models.CASCADE)
     issued_time = models.DateTimeField()

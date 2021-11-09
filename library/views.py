@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect,HttpResponseRedirect
-from .models import bookslist
+from django.shortcuts import render,redirect
+from django.http import HttpResponseRedirect
+from .models import *
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
@@ -79,11 +80,13 @@ def _logout(request):
     return redirect('/')
 
 def register(request):
+    
+    message = ''
     if request.method == "POST":
         #print(request.POST)
         form = NewUserForm(request.POST)
+        #print()
         #print(dir(form))
-        print(form.fields['username']())
         #print(f'Register',form.is_valid())
         if form.is_valid():
             user = form.save()
@@ -91,17 +94,19 @@ def register(request):
             if reader.is_valid():
                 reader.save()
             else:
-                messages.error(request, 'Unable to save as Reader')
-            login(request, user)
-            messages.success(request, "Registration Successful")
-            print(f'Register')
-            return redirect("/account")
+                message = 'Unable to save as Reader'
+            #login(request, user)
+            message = "Registration Successful"
+            #print(f'Register')
+            print(redirect('library:login'))
+            return redirect('library:login')
         else:
-            messages.error(request, 'Something went wrong, please redo')
-            return redirect("/register")
+            #print("Hello World")
+            message = 'Something went wrong, please redo'
+            return redirect('library:register')
     else:
         form = NewUserForm()
-    return render(request,'Register.html',{'form': form})
+    return render(request,'Register.html',{'form': form,"message": message})
 
 def Login(request):
     if request.method == "POST":
