@@ -11,7 +11,7 @@ def search(modeladmin, request, queryset):
 
 
 class bookslist_admin(admin.ModelAdmin):
-    list_display = ('Title', 'Slug', 'ISBN', 'stock')
+    list_display = ('Title', 'Slug', 'ISBN', 'stock', 'shelf_number', 'cupboard_number', 'location')
     ordering = ['Title']
     search_fields = ['Title']
     actions = [search]
