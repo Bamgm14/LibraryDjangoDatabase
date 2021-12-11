@@ -16,6 +16,7 @@ class bookslist(models.Model):
     Author_Name = models.CharField(max_length=200)
     description = models.TextField() 
     stock = models.IntegerField()
+    shelf_number = models.IntegerField(max_length = 15)
     image = models.ImageField(upload_to='images/',default = 'images/not-found-image-15383864787lu.jpg',blank = True)
     
     def save(self, *args, **kwargs):
