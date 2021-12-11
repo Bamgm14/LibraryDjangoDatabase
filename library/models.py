@@ -14,7 +14,10 @@ class bookslist(models.Model):
     Slug = models.SlugField(unique=True,blank=True)
     ISBN = models.CharField(max_length=200, primary_key=True)
     Author_Name = models.CharField(max_length=200)
-    description = models.TextField() 
+    description = models.TextField()
+    shelf_number = models.IntegerField()
+    cupboard_number = models.IntegerField()
+    location = models.IntegerField()
     stock = models.IntegerField()
     image = models.ImageField(upload_to='images/',default = 'images/not-found-image-15383864787lu.jpg',blank = True)
     
