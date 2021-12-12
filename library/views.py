@@ -44,17 +44,18 @@ def library_details(request):
     return render(request, 'library_base.html',{
 
         'Bookslist': bookslists
-        
+
     })
+
 def homepage(request):
     bookslists = bookslist.objects.all()
 
     return render(request, 'homepage.html',{
 
         'Bookslist': bookslists
-        
+
     })
-    
+
 def book_details(request,book_Slug):
     print(request.user)
     try:
@@ -71,7 +72,7 @@ def book_details(request,book_Slug):
         return render(request, 'book_details.html', {
             'book_found': False
         })
-    
+
 def contact(request):
     return render(request, 'Contact.html',{"email" : email})
 
@@ -80,7 +81,7 @@ def _logout(request):
     return redirect('/')
 
 def register(request):
-    
+
     message = ''
     if request.method == "POST":
         #print(request.POST)

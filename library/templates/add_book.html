@@ -13,23 +13,23 @@
             {% csrf_token %}
 			<div class="u-form-group u-form-name">
 				<label for="id_Title" class="u-label">Title *</label>
-				<input type="text" name="Title" maxlength="200" required id="id_Title" placeholder="Enter the Title"
+				<input type="text" name="Title" maxlength="200" required id="id_Title" placeholder="പുസ്തകത്തിന്റെ പേര് "
 				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+			</div>
+			<div class="u-form-group u-form-name">
+				<label for="id_Author_Name" class="u-label">Author Name *</label>
+				<input type="text" name="Author_Name" maxlength="200" required id="id_Author_Name" placeholder="ഗ്രന്ഥകാരന്റെ പേര്  "
+				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+			</div>
+			<div class="u-form-group u-form-name">
+				<label for="id_description" class="u-label">Description *</label>
+				<textarea name="description" cols="40" rows="10" required id="id_description" placeholder="പുസ്തകത്തെക്കുറിച്ച് ഒരു ചെറു വിവരണം എഴുതുക "
+				class="u-border-1 u-border-grey-30 u-input u-input-rectangle"></textarea>
 			</div>
 			<div class="u-form-group u-form-name">
 				<label for="id_ISBN" class="u-label">ISBN *</label>
 				<input type="text" name="ISBN" maxlength="200" required id="id_ISBN" placeholder="Enter the ISBN"
 				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
-			</div>
-			<div class="u-form-group u-form-name">
-				<label for="id_Author_Name" class="u-label">Author Name *</label>
-				<input type="text" name="Author_Name" maxlength="200" required id="id_Author_Name" placeholder="Enter the Author's Name"
-				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
-			</div>
-			<div class="u-form-group u-form-name">
-				<label for="id_description" class="u-label">Description *</label>
-				<textarea name="description" cols="40" rows="10" required id="id_description" placeholder="Enter the Description"
-				class="u-border-1 u-border-grey-30 u-input u-input-rectangle"></textarea>
 			</div>
 			<div class="u-form-group u-form-name">
 				<label for="id_stock" class="u-label">Stock *</label>
