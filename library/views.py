@@ -29,7 +29,7 @@ def add_book(request):
             form.save(commit=True)
             message = "Book has been added."
         else:
-            message = "An Error Has Occured. Possible invalid form entire."
+            message = "An Error Has Occured. Possible invalid form entree."
     else:
         form = NewBook()
     return render(request,'add_book.html',{'msg':message,'form':form})
