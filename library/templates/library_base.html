@@ -21,9 +21,9 @@
         <ul>
 
           {% for book in Bookslist %}
-          <li>
-              <img src="https://covers.openlibrary.org/b/isbn/{{ book.ISBN }}-S.jpg?default=false" onerror="this.onerror=null;this.src='{{MEDIA_URL}}not-found.jpg';" style="float:left;width:25px;height:25px;"><a href="{{ book.get_absolute_url }}" style="padding-left: 6px"><b>{{ book.Title }}</b></a> ({{book.Author_Name}})
-          </li>
+          <ol start="1" style="display: list-item;">
+              <img src="https://covers.openlibrary.org/b/isbn/{{ book.ISBN }}-S.jpg?default=false" onerror="this.onerror=null;this.src='{{MEDIA_URL}}not-found.jpg';" style="float:left;width:40px;height:40px;"><a href="{{ book.get_absolute_url }}" style="padding-left: 6px"><b>{{ book.Title }}</b></a> ({{book.Author_Name}})
+          </ol>
           {% endfor %}
 
         </ul>
