@@ -40,7 +40,10 @@ def account(request):
 
 def library_details(request):
     bookslists = bookslist.objects.all()
-
+    #print(request.method)
+    if request.method == "POST":
+        search = request.POST['search']
+        bookslists = bookslists.filter(Title__startswith=search)
     return render(request, 'library_base.html',{
 
         'Bookslist': bookslists
@@ -48,7 +51,7 @@ def library_details(request):
     })
 def homepage(request):
     bookslists = bookslist.objects.all()
-
+    
     return render(request, 'homepage.html',{
 
         'Bookslist': bookslists
