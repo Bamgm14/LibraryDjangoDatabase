@@ -60,8 +60,8 @@
 				<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/books" style="padding: 10px 20px;">Find Books</a></li>
 				{% if user.is_staff %}
 					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/add-book" style="padding: 10px 20px;">Add Book</a></li>
-					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/issue-book" style="padding: 10px 20px;">Issue Book</a></li>
-					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/add-reader" style="padding: 10px 20px;">Add Reader</a></li>
+					<!--<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/issue-book" style="padding: 10px 20px;">Issue Book</a></li>
+					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/add-reader" style="padding: 10px 20px;">Add Reader</a></li>-->
 				{% endif %}
 				{% if user.is_authenticated %}
 					<li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="/account" style="padding: 10px 20px;">Account</a></li>
@@ -81,8 +81,8 @@
 					<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/books">Find Books</a></li>
 					{% if user.is_staff %}
 						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/add-book">Add Book</a></li>
-						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/issue-book">Issue Book</a></li>
-						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/add-reader">Add Reader</a></li>
+						<!--<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/issue-book">Issue Book</a></li>
+						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/add-reader">Add Reader</a></li>-->
 					{% endif %}
 					{% if user.is_authenticated %}
 						<li class="u-nav-item"><a class="u-button-style u-nav-link" href="/account">Account</a></li>
