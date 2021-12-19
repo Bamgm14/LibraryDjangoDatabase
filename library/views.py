@@ -98,7 +98,7 @@ def register(request):
             #login(request, user)
             message = "Registration Successful"
             #print(f'Register')
-            #print(redirect('library:login'))
+            print(redirect('library:login'))
             return redirect('library:login')
         else:
             #print("Hello World")
