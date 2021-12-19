@@ -19,6 +19,9 @@ class bookslist(models.Model):
     cupboard_number = models.IntegerField()
     location = models.IntegerField()
     stock = models.IntegerField()
+    shelf_number = models.IntegerField()
+    cupboard_number = models.IntegerField()
+    location = models.IntegerField()
     image = models.ImageField(upload_to='images/',default = 'images/not-found-image-15383864787lu.jpg',blank = True)
     
     def save(self, *args, **kwargs):

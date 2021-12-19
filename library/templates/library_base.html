@@ -7,8 +7,9 @@
 {% block Information %}
 	<section id = "Search" class = "u-clearfix u-sheet u-sheet-1">
     <center><h1> List of Books </h1></center>
-    <form>   
-        <center><input type="text" placeholder=" Search books..." name="search"></center>
+    <form method="POST">
+		{% csrf_token %}
+        <center><input type="text" id="id_search" placeholder=" Search books..." name="search"></center>
         <center><button type="submit" class = "btn">Submit</button></center>
     </form>
     <br>
