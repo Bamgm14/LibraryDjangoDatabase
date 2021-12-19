@@ -22,7 +22,7 @@
 
           {% for book in Bookslist %}
           <ol start="1" style="display: list-item;">
-              <img src="https://covers.openlibrary.org/b/isbn/{{ book.ISBN }}-S.jpg?default=false" onerror="this.onerror=null;this.src='{{MEDIA_URL}}not-found.jpg';" style="float:left;width:40px;height:40px;"><a href="{{ book.get_absolute_url }}" style="padding-left: 6px"><b>{{ book.Title }}</b></a> ({{book.Author_Name}})
+              <img src="https://covers.openlibrary.org/b/isbn/{{ book.ISBN }}-S.jpg?default=false" onerror="this.onerror=null;this.src='{{MEDIA_URL}}not-found.jpg';" style="float:left;width:40px;height:40px;"><a href="{{ book.Slug }}" style="padding-left: 6px"><b>{{ book.Title }}</b></a> ({{book.Author_Name}})
           </ol>
           {% endfor %}
 

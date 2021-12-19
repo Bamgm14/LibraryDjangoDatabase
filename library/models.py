@@ -17,7 +17,7 @@ class bookslist(models.Model):
     Author_Name = models.CharField(max_length=200)
     description = models.TextField()
     stock = models.IntegerField()
-    image = models.ImageField(upload_to='images/',default = 'images/not-found-image-15383864787lu.jpg',blank = True)
+    image = models.ImageField(upload_to='images/',default = 'images/not-found.jpg',blank = True)
 
     def save(self, *args, **kwargs):
         self.Slug = slugify(quote(f"{self.Title}_{self.Author_Name}_{self.ISBN}"), allow_unicode=True)

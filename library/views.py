@@ -57,7 +57,7 @@ def homepage(request):
     })
 
 def book_details(request,book_Slug):
-    print(request.user)
+    print(f"HERE____ {request.user}")
     try:
         selected_book = bookslist.objects.get(Slug=book_Slug)
         return render(request, 'book_details.html', {
