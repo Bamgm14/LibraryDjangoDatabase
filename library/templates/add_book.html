@@ -13,8 +13,18 @@
             {% csrf_token %}
 			<div class="u-form-group u-form-name">
 				<label for="id_Title" class="u-label">Title *</label>
-				<input type="text" name="Title" maxlength="200" required id="id_Title" placeholder="Enter the Title"
+				<input type="text" name="Title" maxlength="200" required id="id_Title" placeholder="പുസ്തകത്തിന്റെ പേര് "
 				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+			</div>
+			<div class="u-form-group u-form-name">
+				<label for="id_Author_Name" class="u-label">Author Name *</label>
+				<input type="text" name="Author_Name" maxlength="200" required id="id_Author_Name" placeholder="ഗ്രന്ഥകാരന്റെ പേര്  "
+				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+			</div>
+			<div class="u-form-group u-form-name">
+				<label for="id_description" class="u-label">Description *</label>
+				<textarea name="description" cols="40" rows="10" required id="id_description" placeholder="പുസ്തകത്തെക്കുറിച്ച് ഒരു ചെറു വിവരണം എഴുതുക "
+				class="u-border-1 u-border-grey-30 u-input u-input-rectangle"></textarea>
 			</div>
 			<div class="u-form-group u-form-name">
 				<label for="id_ISBN" class="u-label">ISBN *</label>
@@ -22,18 +32,23 @@
 				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
 			</div>
 			<div class="u-form-group u-form-name">
-				<label for="id_Author_Name" class="u-label">Author Name *</label>
-				<input type="text" name="Author_Name" maxlength="200" required id="id_Author_Name" placeholder="Enter the Author's Name"
+				<label for="id_stock" class="u-label">Stock *</label>
+				<input type="number" name="stock" required id="id_stock"
 				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
 			</div>
 			<div class="u-form-group u-form-name">
-				<label for="id_description" class="u-label">Description *</label>
-				<textarea name="description" cols="40" rows="10" required id="id_description" placeholder="Enter the Description"
-				class="u-border-1 u-border-grey-30 u-input u-input-rectangle"></textarea>
+				<label for="id_cupboard_number" class="u-label">Cupboard Number *</label>
+				<input type="number" name="cupboard_number" required id="id_cupboard_number"
+				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
 			</div>
 			<div class="u-form-group u-form-name">
-				<label for="id_stock" class="u-label">Stock *</label>
-				<input type="number" name="stock" required id="id_stock"
+				<label for="id_shelf_number" class="u-label">Shelf Number *</label>
+				<input type="number" name="shelf_number" required id="id_shelf_number"
+				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
+			</div>
+			<div class="u-form-group u-form-name">
+				<label for="id_location" class="u-label">Location *</label>
+				<input type="number" name="location" required id="id_location"
 				class="u-border-1 u-border-grey-30 u-input u-input-rectangle">
 			</div>
 			<div class="u-form-group u-form-name">
@@ -44,7 +59,6 @@
 			<div class="u-align-left u-form-group u-form-submit">
               <a href="" class="u-btn u-btn-submit u-button-style">Submit</a>
               <input type="submit" value="submit" class="u-form-control-hidden">
-			  
             </div>
           </form>
         </div>

@@ -29,7 +29,7 @@ def add_book(request):
             form.save(commit=True)
             message = "Book has been added."
         else:
-            message = "An Error Has Occured. Possible invalid form entire."
+            message = "An Error Has Occured. Possible invalid form entree."
     else:
         form = NewBook()
     return render(request,'add_book.html',{'msg':message,'form':form})
@@ -43,28 +43,33 @@ def library_details(request):
     #print(request.method)
     if request.method == "POST":
         search = request.POST['search']
-        bookslists = bookslists.filter(Title__startswith=search)
+        bookslists = bookslists.filter(Title__contains=search) | bookslists.filter(Author_Name__contains=search)
     return render(request, 'library_base.html',{
 
         'Bookslist': bookslists
-        
+
     })
+
 def homepage(request):
     bookslists = bookslist.objects.all()
-    
+
     return render(request, 'homepage.html',{
 
         'Bookslist': bookslists
-        
+
     })
-    
-def book_details(request,book_Slug):
-    print(request.user)
+
+def book_details(request, book_ISBN):
     try:
-        selected_book = bookslist.objects.get(Slug=book_Slug)
+        selected_book = bookslist.objects.get(ISBN=book_ISBN)
+        print(f"{selected_book.Author_Name}")
         return render(request, 'book_details.html', {
             'book_found': True,
-            'book': selected_book,
+            'isbn': selected_book.ISBN,
+            'author': selected_book.Author_Name,
+            'title': selected_book.Title,
+            'desc': selected_book.description,
+            'desc': selected_book.description,
             'email': email,
             'user': request.user
         })
@@ -74,7 +79,7 @@ def book_details(request,book_Slug):
         return render(request, 'book_details.html', {
             'book_found': False
         })
-    
+
 def contact(request):
     return render(request, 'Contact.html',{"email" : email})
 
@@ -83,7 +88,7 @@ def _logout(request):
     return redirect('/')
 
 def register(request):
-    
+
     message = ''
     if request.method == "POST":
         #print(request.POST)

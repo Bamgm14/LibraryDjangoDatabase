@@ -1,7 +1,7 @@
 {% extends 'Index.html' %}
 {% load static %}
 {% block Begin %}
-    <title>{{ book.Title }}</title>
+    <title>{{ title }}</title>
     <link rel = "stylesheet" href = "{% static 'base.css' %}">
     <link rel = "stylesheet" href = "{% static 'book_details.css' %}">
 {% endblock %}
@@ -9,18 +9,15 @@
      <main>
          <article>
 			<center>
-             <img src = "{{ book.image.url }}" alt = "ERROR" width="300" height="300>
-
+             <img src = "https://covers.openlibrary.org/b/isbn/{{ isbn }}-M.jpg?default=false" onerror="this.onerror=null;    this.src='{{MEDIA_URL}}Placeholder_book.svg';" width="300" height="400">
              <section id = "location">
-                 <h2>Book Author</h2>
-                 <address>This book was done written by: <span> {{ book.Author_Name }} </span> <br>
-				 ISBN Code: <span> {{ book.ISBN }}</span></address>
+                 <h2>{{ title }}</h2>
+                 <h3>{{ author }}</h3>
              </section>
              <section id = "details">
-                 <h2>What is the book about?</h2>
-                 <p>{{ book.description }}</p> 
+                 <p>{{ desc }}</p> 
                 <footer>
-                    <p><a href="mailto:{{ email }}?Subject=Requesting Book {{ book.ISBN }} for user {{ user.username }}">Contact</a> the library for details.</p>
+                    <p><a href="mailto:{{ email }}?Subject=Requesting Book {{ slug }} for user {{ user.username }}">Contact</a> the library for details.</p>
                 </footer>
              </section>
 			</center>
