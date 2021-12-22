@@ -104,7 +104,10 @@
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-643d"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">Made by:
 		<br>
-		Arjun Suresh, Rayhan Faizel, Arpan George Mathew, Kevin Thomas, Hafeez Muhammed</p>
+        <b>Arjun Suresh, Rayhan Faizel, Arpan George Mathew, Kevin Thomas, Hafeez Muhammed</b></p>
+		<br>
+        {% load email_obfuscator %}
+        {{ '07knu8275@gmail.com'|obfuscate_mailto:"Mail Bodhi Admin in case of any queries/suggestions regarding this site" }}
       </div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
