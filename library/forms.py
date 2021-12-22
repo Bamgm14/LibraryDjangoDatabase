@@ -23,10 +23,13 @@ class NewBook(forms.ModelForm):
 
     class Meta:
         model = bookslist
-        fields = ["Title", "ISBN", "Author_Name", "Slug", "description",'stock','cupboard_number', 'shelf_number', 'location', 'image']
+        fields = ["Title", "ISBN", "Author_Name", "Slug", "description", 'cupboard_number', 'shelf_number', 'image']
 
     def save(self, commit = True):
         book = super(NewBook, self).save(commit = False)
+        book.stock = 1
+        # 0 refers to ground floor
+        book.location = 0
         if commit:
             book.save()
         return book
