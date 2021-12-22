@@ -35,12 +35,10 @@ def add_book(request):
     return render(request,'add_book.html',{'msg':message,'form':form})
 
 def account(request):
-    #print(dir(request.user))
     return render(request,'Account.html',{"user":request.user})
 
 def library_details(request):
-    bookslists = bookslist.objects.all()
-    #print(request.method)
+    bookslists = bookslist.objects.order_by("Title")
     if request.method == "POST":
         search = request.POST['search']
         bookslists = bookslists.filter(Title__contains=search) | bookslists.filter(Author_Name__contains=search)
