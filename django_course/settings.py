@@ -26,7 +26,7 @@ SECRET_KEY = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bodhilib.herokuapp.com','127.0.0.1']
 
 #STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, "Static")
